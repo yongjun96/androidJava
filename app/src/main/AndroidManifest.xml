@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.test28">
+
+    <!--
+     allowBackup : 백업을 허용여부
+     icon : 원하는 아이콘을 선택 [@mipmap -> ic_launcher_round] 경로에서 폰에 맞는 아이콘을 폰이 자동선택
+     roundIcon : 원하는 라운드 아이콘을 선택 [@mipmap -> ic_launcher_round] 경로에서 폰에 맞는 아이콘을 폰이 자동선택
+     label : 앱의(라벨) 이름을 설정 [@string -> app_name] valuse -> strings.xml 경로
+     supportsRtl : Rtl == right to left 오른쪽에서 왼쪽의 형식으로 지정
+     theme(테마) : 테마의 색을 입힘 [@style/Theme.Test28] themes -> themes.xml -> style_name = Theme.Test28 경로
+     activity : name = .MainActivity class의 메인
+
+     -->
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Test28"
+        tools:targetApi="31">
+        <!-- .MainActivity라는 class가 있다는걸 알리는 태그 -->
+        <activity android:name=".MainActivity"></activity>
+
+        <!-- <intent-filter>가 붙어 있는 activity가 먼저 실행됨 -->
+        <activity
+            android:name=".SubActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1"
+    >
+
+    <!--
+    dp, px 단위
+    모바일환경에 모든 해상도에 대응하기 위해서, dp를 사용함
+
+    px = dp * 단말 DPI/기본 160
+    dp = px * 기본 160/단말 DPI
+    ex). dp = 1920 * 160/420
+
+    layout = 단위 dp
+    text = 단위 sp
+
+    -->
+
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="버튼1"
+        android:layout_weight="1"
+        android:onClick="Btn1Click"
+        android:textAllCaps="false" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="버튼2"
+        android:textAllCaps="false"
+        android:id="@+id/btn2"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="버튼3"
+        android:id="@+id/btn3"
+        android:textAllCaps="false"
+        />
+
+</LinearLayout>
